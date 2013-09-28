@@ -13,7 +13,8 @@ npm install csscssbeauty -g
 
 ## Usage
 ```shell
-csscssbeauty --port=9999 /path/to/file_1.css /path/to/file_2.css  /path/to/file_n.css
+csscssbeauty --port=9999 --browser=Chrome /path/to/file_1.css /path/to/file_2.css  /path/to/file_n.css
 ```
 
-* Port is optional, default is 8787
+* `port` is optional, default is 8787.
+* `browser` is optional, default is the default browser. Set to false if no browser should be opened.

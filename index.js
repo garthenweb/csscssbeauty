@@ -2,6 +2,7 @@
 
 var argv    = require('optimist').argv;
 var watch   = require('node-watch');
+var open    = require('open');
 var http    = require('http');
 var csscss  = require('./csscss');
 var app     = require('./app');
@@ -37,6 +38,10 @@ app.get('/', function(req, res) {
 	res.render('index', store);
 });
 
-// start server on given port
+// start server on given port and open the browser
 server.listen(process.env.PORT || argv.port || 8787);
-console.log("Open http://localhost:%d in your browser", server.address().port);
+if(argv.browser === 'false') {
+	console.log('Connect to http://localhost:' + server.address().port + ' to see the result');
+} else {
+	open('http://localhost:' + server.address().port, argv.browser);
+}
