@@ -15,7 +15,7 @@
       "name": "Kevin Lorenz",
       "email": "kevinlorenzdotcom@gmail.com",
       "url": "http://www.kevinlorenz.com/"
-    },
+    }
   ],
   "license": "MIT",
   "dependencies": {
@@ -35,5 +35,12 @@
     "csscss",
     "redundancy",
     "analysis"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/garthenweb/csscssbeauty"
+  },
+  "bugs": {
+    "url": "https://github.com/garthenweb/csscssbeauty/issues"
+  }
 }
