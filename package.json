@@ -1,0 +1,39 @@
+{
+  "name": "csscssbeauty",
+  "version": "0.0.1",
+  "description": "Executes CSSCSS and shows the result beautified on a local server.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "contributors": [
+    {
+      "name": "Jannick Garthen",
+      "email": "jannick.garthen@gmail.com"
+    },
+    {
+      "name": "Kevin Lorenz",
+      "email": "kevinlorenzdotcom@gmail.com",
+      "url": "http://www.kevinlorenz.com/"
+    },
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "optimist": "~0.6.0",
+    "express": "~3.4.0",
+    "socket.io": "~0.9.16",
+    "consolidate": "~0.9.1",
+    "swig": "~1.0.0",
+    "node-watch": "~0.3.4"
+  },
+  "preferGlobal": "true",
+  "bin": {
+    "reloadify": "index.js"
+  },
+  "keywords": [
+    "css",
+    "csscss",
+    "redundancy",
+    "analysis"
+  ]
+}

@@ -1,0 +1,16 @@
+<!html>
+<title>CSSCSSBeauty</title>
+<link href="/main.css" rel="stylesheet">
+
+{% block body %}{% endblock %}
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+	(function() {
+		'use strict';
+		var socket = io.connect(location.toString());
+		socket.on('update', function() {
+			location.reload(true);
+		});
+	})();
+</script>

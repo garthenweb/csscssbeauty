@@ -1,0 +1,17 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+	<h1>CSSCSS Data</h1>
+	<ul>
+		{% for msg in data %}
+			<li>
+				<dl>
+					<dt>{{ msg.selectors }} ({{ msg.count }})</dt>
+					<dd>
+						{{ msg.declarations|join('<br>')|raw }}
+					</dd>
+				</dl>
+			</li>
+		{% endfor %}
+	</ul>
+{% endblock %}

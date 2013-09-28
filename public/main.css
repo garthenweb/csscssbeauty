@@ -1,0 +1,4 @@
+body:before {
+	content: "Make me beautiful!";
+	font-size: 20rem;
+}
