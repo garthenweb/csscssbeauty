@@ -29,7 +29,7 @@
   },
   "preferGlobal": "true",
   "bin": {
-    "reloadify": "index.js"
+    "csscssbeauty": "index.js"
   },
   "keywords": [
     "css",

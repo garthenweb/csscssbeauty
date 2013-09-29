@@ -51,8 +51,6 @@ app.get('/', function(req, res) {
 	res.render('index', store);
 });
 
-// console.log(argv);
-
 // start server on given port and open the browser
 server.listen(process.env.PORT || argv.port);
 if(argv.browser === 'false') {
