@@ -1,6 +1,56 @@
 body {
 	font-family: sans-serif;
+	font-size: 100%;
+	margin: 0;
+	padding: 0;
 }
 
+header {
+	height: 15em;
+	background: #b90a0d;
+	padding: 1em 1em 4em 2em;
+}
 
+h1 {
+	color: #fff;
+	font-size: 5em;
+	text-align: center;
+}
 
+.code {
+	padding: 2em;
+	font-size: 1.5em;
+}
+
+li {
+	display: inline-block;
+	margin: 0 0 2em 2em;
+	vertical-align: top;
+}
+
+ul,
+dl {
+	margin: 0;
+	list-style: none;
+}
+
+dt,
+dl {
+	margin: 0 0 .6em 0;
+}
+
+dl {
+	display: inline-block;
+	background: lightgrey;
+	border-radius: 4px;
+	padding: 1em;
+	color: white;
+}
+
+dt {
+	color: grey;
+}
+
+.count {
+	color: #b90a0d;
+}

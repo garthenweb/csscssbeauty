@@ -1,7 +1,10 @@
 {% extends 'layout.html.twig' %}
 
 {% block body %}
-	<h1>CSSCSS Data</h1>
+	<header>
+	<h1>Your duplicated rules.<br>Take and polish'em!</h1>
+	</header>
+	<section class="code">
 	<ul>
 		{% for msg in data %}
 			<li>
@@ -14,4 +17,5 @@
 			</li>
 		{% endfor %}
 	</ul>
+	</section>
 {% endblock %}
