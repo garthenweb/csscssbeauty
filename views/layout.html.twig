@@ -10,7 +10,7 @@
     'use strict';
     var socket = io.connect(location.toString());
     socket.on('update', function() {
-      location.reload(true);
+      location.href = location.href;
     });
   })();
 </script>
