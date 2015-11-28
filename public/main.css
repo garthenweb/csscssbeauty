@@ -5,10 +5,24 @@ body {
 	padding: 0;
 }
 
-header {
+.header {
 	height: 15em;
-	background: #b90a0d;
-	padding: 1em 1em 4em 2em;
+  padding: 1em 1em 4em 2em;
+}
+
+.header--error {
+  background: brown;
+}
+
+.header--success {
+  background: #40B51B;
+  height: 100%;
+  display: flex;
+  box-sizing: border-box;
+}
+
+.header--success h1 {
+  margin: auto;
 }
 
 h1 {
@@ -19,7 +33,7 @@ h1 {
 
 .code {
 	padding: 2em;
-	font-size: 1.5em;
+	font-size: 1em;
 }
 
 li {
@@ -34,23 +48,21 @@ dl {
 	list-style: none;
 }
 
-dt,
-dl {
-	margin: 0 0 .6em 0;
+.code-item {
+ position: relative;
 }
 
-dl {
-	display: inline-block;
-	background: lightgrey;
-	border-radius: 4px;
-	padding: 1em;
-	color: white;
+.code-item-count {
+  color: brown;
+  background: lightgrey;
+  padding: 7px;
+  border-radius: 5px;
+  position: absolute;
+  right: 0;
+  right: 10px;
+  top: -10px;
 }
 
-dt {
-	color: grey;
-}
-
-.count {
-	color: #b90a0d;
+code {
+  line-height: 1.1em;
 }
