@@ -1,3 +1,4 @@
-<pre><code class="language-css">{{ msg.selectors }} {
+<pre><code class="language-css">{% for selector in msg.selectors %}{{ selector }}{% if !loop.last %}, /* and */
+{% endif %}{% endfor %} {
 {% for dec in msg.declarations %}  {{ dec }};
 {% endfor %}}</code></pre>

@@ -17,7 +17,7 @@
       <ul>
         {% for msg in data %}
           <li class="code-item">
-            <span class="code-item-count">{{ msg.count }}x</span>
+            <span class="code-item-count">share {{ msg.count }} rules</span>
             {% include '_msg.html.twig' with msg %}
           </li>
         {% endfor %}
