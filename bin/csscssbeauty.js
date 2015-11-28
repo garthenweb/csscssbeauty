@@ -80,6 +80,11 @@ if (argv.browser) {
  * Finally show some logs
  */
 logger('csscssbeauty: Server started. Open `' + url + '` to see the results.');
+if (files.length === 0) {
+  logger('csscssbeauty: No files found.');
+  process.exit();
+}
+
 logger('csscssbeauty: Listen for files');
 files.forEach(function showFiles(file) {
   logger('  ' + file);
