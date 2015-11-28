@@ -6,11 +6,11 @@
 
 <script src="/socket.io/socket.io.js"></script>
 <script>
-	(function() {
-		'use strict';
-		var socket = io.connect(location.toString());
-		socket.on('update', function() {
-			location.reload(true);
-		});
-	})();
+  (function() {
+    'use strict';
+    var socket = io.connect(location.toString());
+    socket.on('update', function() {
+      location.reload(true);
+    });
+  })();
 </script>

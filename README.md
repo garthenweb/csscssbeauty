@@ -4,7 +4,7 @@ The result will automatically be updated once a file change.
 
 ## Installation
 
-Install [NodeJS](http://nodejs.org/), [NPM](https://npmjs.org/), [Ruby](https://npmjs.org/) and [CSSCSS](http://zmoazeni.github.io/csscss/).
+Install [NodeJS](http://nodejs.org/), [NPM](https://npmjs.org/), [Ruby](https://www.ruby-lang.org) and [CSSCSS](http://zmoazeni.github.io/csscss/).
 
 Then install CSSCSSBeauty by npm:
 ```shell

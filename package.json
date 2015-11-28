@@ -2,7 +2,7 @@
   "name": "csscssbeauty",
   "version": "0.0.3",
   "description": "Executes CSSCSS and shows the result beautified on a local server.",
-  "main": "index.js",
+  "main": "./lib/csscss.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,16 +19,16 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "optimist": "~0.6.0",
-    "express": "~3.4.0",
-    "socket.io": "~0.9.16",
-    "swig": "~1.0.0",
-    "node-watch": "~0.3.4",
-    "open": "0.0.4"
+    "express": "^4.13.3",
+    "minimist": "^1.2.0",
+    "node-watch": "^0.3.4",
+    "open": "^0.0.5",
+    "socket.io": "^1.3.7",
+    "swig": "^1.4.2"
   },
   "preferGlobal": "true",
   "bin": {
-    "csscssbeauty": "index.js"
+    "csscssbeauty": "./bin/csscssbeauty.js"
   },
   "keywords": [
     "css",
@@ -42,5 +42,9 @@
   },
   "bugs": {
     "url": "https://github.com/garthenweb/csscssbeauty/issues"
+  },
+  "devDependencies": {
+    "eslint": "^1.10.2",
+    "eslint-config-airbnb": "^1.0.2"
   }
 }

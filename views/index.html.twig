@@ -1,21 +1,21 @@
 {% extends 'layout.html.twig' %}
 
 {% block body %}
-	<header>
-	<h1>Your duplicated rules.<br>Take and polish'em!</h1>
-	</header>
-	<section class="code">
-	<ul>
-		{% for msg in data %}
-			<li>
-				<dl>
-					<dt>{{ msg.selectors }} <span class="count">({{ msg.count }})</span></dt>
-					<dd>
-						{{ msg.declarations|join('<br>')|raw }}
-					</dd>
-				</dl>
-			</li>
-		{% endfor %}
-	</ul>
-	</section>
+  <header>
+    <h1>Your duplicated rules.<br>Take and polish'em!</h1>
+  </header>
+  <section class="code">
+    <ul>
+      {% for msg in data %}
+        <li>
+          <dl>
+            <dt>{{ msg.selectors }} <span class="count">({{ msg.count }})</span></dt>
+            <dd>
+              {{ msg.declarations|join('<br>')|raw }}
+            </dd>
+          </dl>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
 {% endblock %}
