@@ -20,6 +20,7 @@
   "license": "MIT",
   "dependencies": {
     "express": "^4.13.3",
+    "glob": "^6.0.1",
     "minimist": "^1.2.0",
     "node-watch": "^0.3.4",
     "open": "^0.0.5",

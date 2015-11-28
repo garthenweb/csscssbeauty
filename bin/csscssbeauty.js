@@ -1,6 +1,19 @@
 #!/usr/bin/env node
+
+var watch = require('node-watch');
+var open = require('open');
+var glob = require('glob');
+/**
+ * Parsed list of arguments
+ */
 var argv = require('minimist')(process.argv.slice(2), {
-  boolean: ['verbose', 'color', 'match-shorthand', 'ignore-sass-mixins', 'compass'],
+  boolean: [
+    'verbose',
+    'color',
+    'match-shorthand',
+    'ignore-sass-mixins',
+    'compass',
+  ],
   default: {
     port: process.env.PORT || '8787',
     browser: true,
@@ -10,16 +23,32 @@ var argv = require('minimist')(process.argv.slice(2), {
     'n': 'num',
   },
 });
-var watch = require('node-watch');
-var open = require('open');
 
 var createServer = require('../lib/createServer');
 var csscss = require('../lib/csscss');
+var logger = require('../lib/logger');
+
+/**
+ * Read all files from patterns.
+ * Async/ parallel execution would be better for performance but would require
+ * complex logic, additional dependencies or a higher node version. This is just
+ * executed once on start so its okay to execute in sync.
+ */
+var files = argv._
+  .map(function patternToFiles(pattern) {
+    return glob.sync(pattern);
+  })
+  .reduce(function mergeFiles(totalFiles, addFiles) {
+    return totalFiles.concat(addFiles);
+  }, []);
 
 var servers = createServer({ port: argv.port });
 var url = ('http://localhost:' + argv.port);
+/**
+ * Initialize a route to show results for all duplicate rules
+ */
 servers.app.get('/', function handleIndex(req, res) {
-  csscss.execute(argv._, argv, function renderIndex(err, csscssData) {
+  csscss.execute(files, argv, function renderIndex(err, csscssData) {
     if (err) {
       throw err;
     }
@@ -27,13 +56,18 @@ servers.app.get('/', function handleIndex(req, res) {
   });
 });
 
-// activate file watcher
-watch(argv._, function onChange() {
+/**
+ * watch all files for changes and emit an update event
+ */
+watch(files, function onChange(file) {
+  logger('csscssbeauty: File `' + file + '` changed.');
   // send reload event
   servers.sockets.emit('update', { trigger: true });
 });
 
-console.log('Open `' + url + '` to see the result');
+/**
+ * Open a browser tab if defined in arguments
+ */
 if (argv.browser) {
   open(
     url,
@@ -41,3 +75,12 @@ if (argv.browser) {
     typeof argv.browser === 'boolean' ? null : argv.browser
   );
 }
+
+/**
+ * Finally show some logs
+ */
+logger('csscssbeauty: Server started. Open `' + url + '` to see the results.');
+logger('csscssbeauty: Listen for files');
+files.forEach(function showFiles(file) {
+  logger('  ' + file);
+});
