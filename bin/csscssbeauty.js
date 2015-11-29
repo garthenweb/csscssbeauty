@@ -7,13 +7,7 @@ var glob = require('glob');
  * Parsed list of arguments
  */
 var argv = require('minimist')(process.argv.slice(2), {
-  boolean: [
-    'verbose',
-    'color',
-    'match-shorthand',
-    'ignore-sass-mixins',
-    'compass',
-  ],
+  boolean: true,
   default: {
     port: process.env.PORT || '8787',
     browser: true,
@@ -68,7 +62,7 @@ watch(files, function onChange(file) {
 /**
  * Open a browser tab if defined in arguments
  */
-if (argv.browser) {
+if (argv.browser && argv.browser !== 'false') {
   open(
     url,
     // don't pass boolean, but browser string if defined
