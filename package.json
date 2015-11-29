@@ -1,6 +1,6 @@
 {
   "name": "csscssbeauty",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Executes CSSCSS and shows the result beautified on a local server.",
   "main": "./lib/csscss.js",
   "scripts": {
